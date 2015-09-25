@@ -18,11 +18,19 @@ public class TcpClient
         String sentence;   
         String modifiedSentence;   
         BufferedReader inFromUser = new BufferedReader( new InputStreamReader(System.in));   
-        Socket clientSocket = new Socket("google.de", 80);  
+        System.out.println("Connetcting");  
+        Socket clientSocket = new Socket("10.0.10.7", 80);  
+                System.out.println("Connected");  
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());   
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));   
-        sentence = inFromUser.readLine();   outToServer.writeBytes(sentence + '\n');   
+                System.out.println("Reading");  
+        sentence = inFromServer.readLine();   
+        System.out.println("Recieved: " + sentence); 
+        System.out.println("Sending: " + sentence);  
+        outToServer.writeBytes(sentence + '\n'); 
+        System.out.println("Sended: " + sentence);  
         modifiedSentence = inFromServer.readLine();   
+        
         System.out.println("FROM SERVER: " + modifiedSentence);   
         clientSocket.close();  
     } 
