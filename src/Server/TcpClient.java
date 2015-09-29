@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author mfrye
  */
-public class TcpClient {
+public class TcpClient implements Runnable {
     Socket socket;
     BufferedReader inFromClient;
     DataOutputStream outToClient;
@@ -29,7 +29,9 @@ public class TcpClient {
         this.socket = socket;
         inFromClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));             
         outToClient = new DataOutputStream(socket.getOutputStream());  
-        
+        Thread t;
+        t = new Thread (this, "ClientThread");
+        t.start ();
             //System.out.println("Sending to Client");  
             //outToClient.writeChars("Fu Fu Fa Fo" + '\n');  
             //System.out.println("Waiting for Response");  
@@ -38,8 +40,11 @@ public class TcpClient {
             //capitalizedSentence = clientSentence.toUpperCase() + '\n';             
             //outToClient.writeBytes(capitalizedSentence);          
     }
-    
-     public void receiver()
+     public void run()
+     {
+      receiver();
+     }
+     private void receiver()
      {
 
         try 
@@ -48,7 +53,7 @@ public class TcpClient {
              {
                 int zeichen;
                 String command = "";
-                String Opcode = null;
+                String Opcode = "";
                 boolean CommandFinished = false;
                 while(!CommandFinished)
                 {
@@ -56,7 +61,7 @@ public class TcpClient {
                       if((char)zeichen == ';')
                       {
                           CommandFinished = true;
-                          Packet packet = new Packet(Opcode, command);
+                          Packet packet = new Packet(Opcode, command, outToClient);
                           packet.handle();
                           break;
                       }
@@ -67,7 +72,7 @@ public class TcpClient {
                       }else command += (char)zeichen;
                       
                 }
-                System.out.println("Command: " + command); 
+                //System.out.println("Command: " + command); 
              }
         }
         catch (IOException ex)

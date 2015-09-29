@@ -19,7 +19,7 @@ public class TcpClient
         String sentence;   
         String modifiedSentence;    
         System.out.println("Connetcting");  
-        Socket clientSocket = new Socket("10.0.10.7", 80);  
+        Socket clientSocket = new Socket("LOCALHOST", 80);  
         
         
         System.out.println("Connected");  
@@ -36,7 +36,9 @@ public class TcpClient
         this.socket = socket;
         inFromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));             
         outToServer = new DataOutputStream(socket.getOutputStream());  
-        outToServer.writeChars("001|Fu Fu Fa Fa;");
+        outToServer.writeChars("1|0.01b;");
+        receiver();
+        
             //System.out.println("Sending to Client");  
             //outToClient.writeChars("Fu Fu Fa Fo" + '\n');  
             //System.out.println("Waiting for Response");  
@@ -46,7 +48,7 @@ public class TcpClient
             //outToClient.writeBytes(capitalizedSentence);          
     }
     
-     public void receiver()
+     private void receiver()
      {
 
         try 
@@ -55,7 +57,7 @@ public class TcpClient
              {
                 int zeichen;
                 String command = "";
-                String Opcode = null;
+                String Opcode = "";
                 boolean CommandFinished = false;
                 while(!CommandFinished)
                 {
@@ -63,7 +65,7 @@ public class TcpClient
                       if((char)zeichen == ';')
                       {
                           CommandFinished = true;
-                          Packet packet = new Packet(Opcode, command);
+                          Packet packet = new Packet(Opcode, command, outToServer);
                           packet.handle();
                           break;
                       }
@@ -74,7 +76,7 @@ public class TcpClient
                       }else command += (char)zeichen;
                       
                 }
-                System.out.println("Command: " + command); 
+                //System.out.println("Command: " + command); 
              }
         }
         catch (IOException ex)

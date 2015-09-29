@@ -18,7 +18,9 @@ public class MADN {
      */
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        TcpServer.main(args);
+        //TcpServer.main(args);
+      
+        TcpClient.main(args);
     }
     
 }
