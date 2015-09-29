@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package madn.views;
+package Server.player.model;
 
 /**
  *
  * @author Lokaler Benutzer
  */
-public class SpielfeldGUI {
+public class player {
     
 }
