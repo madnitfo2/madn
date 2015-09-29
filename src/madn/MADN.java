@@ -6,7 +6,7 @@
 package madn;
 
 import Client.TcpClient;
-
+import Server.TcpServer;
 /**
  *
  * @author mfrye
@@ -18,7 +18,7 @@ public class MADN {
      */
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        TcpClient.main(args);
+        TcpServer.main(args);
     }
     
 }

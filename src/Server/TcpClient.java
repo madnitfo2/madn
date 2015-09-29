@@ -3,40 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Client;
+package Server;
+
+import Packethandling.Packet;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author mfrye
  */
-import Packethandling.Packet;
-import java.io.*; 
-import java.net.*; 
-public class TcpClient
-{  
-    public static void main(String argv[]) throws Exception  
-    {   
-        String sentence;   
-        String modifiedSentence;    
-        System.out.println("Connetcting");  
-        Socket clientSocket = new Socket("10.0.10.7", 80);  
-        
-        
-        System.out.println("Connected");  
-        new TcpClient(clientSocket);
-        clientSocket.close();  
-    } 
-    
+public class TcpClient {
     Socket socket;
-    BufferedReader inFromServer;
-    DataOutputStream outToServer;
+    BufferedReader inFromClient;
+    DataOutputStream outToClient;
     
     public TcpClient(Socket socket)  throws Exception   
     {
         this.socket = socket;
-        inFromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));             
-        outToServer = new DataOutputStream(socket.getOutputStream());  
-        outToServer.writeChars("001|Fu Fu Fa Fa;");
+        inFromClient = new BufferedReader(new InputStreamReader(socket.getInputStream()));             
+        outToClient = new DataOutputStream(socket.getOutputStream());  
+        
             //System.out.println("Sending to Client");  
             //outToClient.writeChars("Fu Fu Fa Fo" + '\n');  
             //System.out.println("Waiting for Response");  
@@ -59,7 +52,7 @@ public class TcpClient
                 boolean CommandFinished = false;
                 while(!CommandFinished)
                 {
-                      zeichen = inFromServer.read();
+                      zeichen = inFromClient.read();
                       if((char)zeichen == ';')
                       {
                           CommandFinished = true;
