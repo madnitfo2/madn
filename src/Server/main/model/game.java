@@ -3,40 +3,75 @@
  * and open the template in the editor.
  */
 package Server.main.model;
+import Server.player.model.player;
+import madn.model.Figur;
 
 /**
  *
  * @author Lokaler Benutzer
  */
 public class game {
-    public void loginPlayer(String name){
-    //init play with name, go to lobby
+    
+    int gameID;
+
+    public int getGameID() {
+        return gameID;
     }
+
+    public void setGameID(int gameID) {
+        this.gameID = gameID;
+    }  
+    
+    public void loginPlayer(String name){
+    //init player with name, go to lobby    
+        player newPlayer = new player();
+        player addedPlayer = new player(name, newPlayer.getNextPlayerID());
+        newPlayer = null;
+        
+        //addedPlayer zur Lobby führen
+        
+    }
+    
     public void getLoginScreen(){
     //zeige login-bildschirm, soblad verbindung aufgebaut wurde.
     }
-    public void calcNextPositions(Player name){
+    
+    public void calcNextPositions(player name){
     //berechnung der nächsten möhglichen Positionen für alle Figuren des Spielers
     }
+    
     public int dice(){
         //würfeln ausführen
         int dice = (int)Math.random()*6;    
         return dice;
     }
-    public void nextPlayer(Player aktuellerSpieler){
+    
+    public void nextPlayer(player aktuellerSpieler){
         // nächste Spieler der Reihe ermitteln.
     }
+    
     public void getTimer(){
+        
     }
-    public alertTimesUp(){
-        this.nextPlayer();
+    
+    public void alertTimesUp(){
+        player aktPlayer = new player(); 
+        this.nextPlayer(aktPlayer);
     }
+    
     public void resetTimer(){
+        
     }
-    public void setFinalPositionforFigure(Player name, Figure number){
+    
+    public void setFinalPositionforFigure(player name, Figur number){
+        
     }
-    public void setFinalPosForPlayer(Player name){
+    
+    public void setFinalPosForPlayer(player name){
+        
     }
-    public void initGame(Player[] playerArray){
+    
+    public void initGame(player[] playerArray){
+        
     }
 }

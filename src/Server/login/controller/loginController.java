@@ -9,5 +9,5 @@ package Server.login.controller;
  * @author Lokaler Benutzer
  */
 public class loginController {
-    
+    //neuen Player erstellen, player zur Lobby weiterleiten
 }
