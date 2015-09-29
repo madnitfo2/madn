@@ -10,7 +10,7 @@ package Server.main.model;
  */
 public class game {
     public void loginPlayer(String name){
-    //init play with name, go to lobby
+    //init player with name, go to lobby
     }
     public void getLoginScreen(){
     //zeige login-bildschirm, soblad verbindung aufgebaut wurde.
@@ -28,8 +28,8 @@ public class game {
     }
     public void getTimer(){
     }
-    public alertTimesUp(){
-        this.nextPlayer();
+    public void alertTimesUp(){
+        //this.nextPlayer();
     }
     public void resetTimer(){
     }
