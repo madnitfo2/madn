@@ -36,7 +36,7 @@ class LoginGUI extends Frame{
         this.add(loginButton);
     }
     
-    public String getName(){
+    public String getPlayerName(){
         return this.loginField.getText();
     }
     
