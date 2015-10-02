@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Server.login.view;
+package Client.views;
 
 import java.awt.Canvas;
 import java.awt.Frame;
@@ -10,22 +10,38 @@ import java.awt.Button;
 import java.awt.TextField;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 /**
  *
  * @author Lokaler Benutzer
  */
-class login extends Canvas{
+class LoginGUI extends Frame{
     
     private Frame login;
     private TextField loginField;
     private Button loginButton = new Button("Einloggen");
     
-    login(){
-        login = new Frame("Login");
+    LoginGUI(){
+        super("Login");
+        
+        initForm();
+    }
+    
+    private void initForm(){
         loginField = new TextField();
-        login.add(loginField);
-        login.add(loginButton);
+        this.add(loginField);
+        this.add(loginButton);
+    }
+    
+    public String getPlayerName(){
+        return this.loginField.getText();
+    }
+    
+    public void setLoginListener(ActionListener l){
+        this.loginButton.addActionListener(l);
     }
     
     public static class CloseListener extends WindowAdapter
