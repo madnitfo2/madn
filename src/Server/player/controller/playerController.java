@@ -25,6 +25,7 @@ public class playerController {
        Players[currPlayer].setGameID(player.getGameID());
        Players[currPlayer].setPlayerID(player.getPlayerID());
        Players[currPlayer].setName(player.getName());
+       //prüfen, ob das läuft, da null initalisiert
        currPlayer += 1;
     }
       
@@ -32,4 +33,5 @@ public class playerController {
     public void setFigureOfPlayer(player name, Figur figureID) {
         
     }
+    
 }
