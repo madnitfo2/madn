@@ -17,14 +17,6 @@ import java.awt.event.ActionListener;
  * @author Lokaler Benutzer
  */
 public class SpielfeldGUI extends Frame {
-    
-    
-    
-    
-    
-    
-    
-    
     public static class CloseListener extends WindowAdapter
 	{	public void windowClosing(WindowEvent e)
 		{	e.getWindow().setVisible(false);

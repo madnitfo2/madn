@@ -18,7 +18,7 @@ public class playerController {
     int currPlayer;
     //Spieler dem Spiel hinzufügen
     public void setPlayerToGame(player player) {
-       if(currPlayer == 4) {
+       if(currPlayer == 3) {
            currPlayer = 0;
            aktGame.initGame(Players);
        }

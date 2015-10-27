@@ -20,10 +20,17 @@ public class player {
         
     }
     
-    public player(String name, int playerID) {
+    public player(String name) {
         this.name = name;
         this.playerID = playerID;
-        nextPlayerID += 1;
+        if (nextPlayerID == 3) {
+            nextPlayerID = 0;
+            gameID += 1;
+
+        } else {
+            nextPlayerID += 1;
+
+        }
     }
     
     public int getNextPlayerID() {

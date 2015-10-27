@@ -24,11 +24,8 @@ public class game {
     
     public void loginPlayer(String name){
     //init player with name, go to lobby    
-        player newPlayer = new player();
-        player addedPlayer = new player(name, newPlayer.getNextPlayerID());
-        newPlayer = null;
-        
-        //addedPlayer zur Lobby führen
+        player newPlayer = new player(name);
+        newPlayer.setGameID(this.gameID);
         
     }
     
