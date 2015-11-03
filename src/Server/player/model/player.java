@@ -32,10 +32,8 @@ public class player {
         if (nextPlayerID == 3) {
             nextPlayerID = 0;
             gameID += 1;
-
         } else {
             nextPlayerID += 1;
-
         }
     }
     

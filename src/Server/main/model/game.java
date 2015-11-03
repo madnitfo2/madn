@@ -5,6 +5,7 @@
 package Server.main.model;
 import Server.player.model.player;
 import madn.model.Figur;
+import Server.main.model.*;
 //https://github.com/sdoerner/MenschAergerDichNicht
 /**
  *
@@ -13,6 +14,9 @@ import madn.model.Figur;
 public class game {
     
     int gameID;
+    int gameTime;
+    int timer;
+    java.sql.Timestamp lastTimestamp;
 
     public int getGameID() {
         return gameID;
@@ -45,10 +49,19 @@ public class game {
     
     public void nextPlayer(player aktuellerSpieler){
         // nächste Spieler der Reihe ermitteln.
+        int nextPlayerId;
+        int currPlayerId = aktuellerSpieler.getPlayerID();
+        if(currPlayerId == 3){
+            nextPlayerId = 0;
+        } else {
+            nextPlayerId = currPlayerId++;
+        }
     }
     
-    public void getTimer(){
+    public int getTimer(){
+        Countdown now = new Countdown();
         
+        return now.;
     }
     
     public void alertTimesUp(){
@@ -57,7 +70,7 @@ public class game {
     }
     
     public void resetTimer(){
-        
+        this.timer = gameTime;
     }
     
     public void setFinalPositionforFigure(player name, Figur number){
