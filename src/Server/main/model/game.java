@@ -58,11 +58,9 @@ public class game {
         }
     }
     
-    public int getTimer(){
-        Countdown now = new Countdown();
-        
-        return now.;
-    }
+//    public int getTimer(){
+//        ;
+//    }
     
     public void alertTimesUp(){
         player aktPlayer = new player(); 

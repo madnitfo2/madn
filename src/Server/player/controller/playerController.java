@@ -30,7 +30,7 @@ public class playerController {
     }
       
     //Figur des Spielers anhand der Spieler- und dessen FigurenID bewegen
-    public void setFigureOfPlayer(player name, Figur figureID) {
+    public void setFigureOfPlayer(player name, Figur figureID, int diced) {
         
     }
     
