@@ -94,8 +94,7 @@ public class player {
     public int[] getFigureArray(int playerID){
         return myFigures;
     }
-    public void changeFigureArray(int figure){
-        int roll = this.currGame.dice();
-        this.myFigures[figure] += roll;
+    public void changeFigureArray(int figure, int newPosition){
+        this.myFigures[figure] = newPosition;
     }
 }
