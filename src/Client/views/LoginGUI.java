@@ -1,53 +1,43 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Client.views;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JButton;
 
-import java.awt.Canvas;
-import java.awt.Frame;
-import java.awt.Button;
-import java.awt.TextField;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+public class LoginGUI extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtEnterYourName;
 
 
-/**
- *
- * @author Lokaler Benutzer
- */
-class LoginGUI extends Frame{
-    
-    private Frame login;
-    private TextField loginField;
-    private Button loginButton = new Button("Einloggen");
-    
-    LoginGUI(){
-        super("Login");
-        
-        initForm();
-    }
-    
-    private void initForm(){
-        loginField = new TextField();
-        this.add(loginField);
-        this.add(loginButton);
-    }
-    
-    public String getPlayerName(){
-        return this.loginField.getText();
-    }
-    
-    public void setLoginListener(ActionListener l){
-        this.loginButton.addActionListener(l);
-    }
-    
-    public static class CloseListener extends WindowAdapter{	
-        public void windowClosing(WindowEvent e){	
-            e.getWindow().setVisible(false);
-            System.exit(0);
-        }
-    }
+	public LoginGUI() {
+		setResizable(false);
+		setTitle("Login");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 379, 160);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 375, 134);
+		panel.setBackground(new Color(46, 139, 87));
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		txtEnterYourName = new JTextField();
+		txtEnterYourName.setText("Enter Your Name");
+		txtEnterYourName.setFont(new Font("Microsoft YaHei", Font.BOLD, 13));
+		txtEnterYourName.setBounds(25, 32, 322, 32);
+		panel.add(txtEnterYourName);
+		txtEnterYourName.setColumns(10);
+		
+		JButton btnNewButton = new JButton("GO!");
+		btnNewButton.setBounds(138, 81, 89, 33);
+		panel.add(btnNewButton);
+	}
 }
