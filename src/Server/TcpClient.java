@@ -58,6 +58,7 @@ public class TcpClient implements Runnable {
                 while(!CommandFinished)
                 {
                       zeichen = inFromClient.read();
+                      if(zeichen == 0) zeichen = inFromClient.read();
                       if((char)zeichen == ';')
                       {
                           CommandFinished = true;
