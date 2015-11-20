@@ -6,6 +6,7 @@
 package madn;
 
 import Client.TcpClient;
+import Packethandling.Packet;
 import Server.TcpServer;
 /**
  *
@@ -18,9 +19,15 @@ public class MADN {
      */
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        //TcpServer.main(args);
-      
-        TcpClient.main(args);
+       //TcpServer.main(args);
+       TcpClient.main(args);
+      //Packet p = new Packet("2","",null);
+      //p.writestring("Parameter 1 ?!?!");
+      //p.writestring("Parameter 2 ?!?!");
+      //String test = p.readstring();
+      //test = p.readstring();
+      //test = p.readstring();
+        //
     }
     
 }

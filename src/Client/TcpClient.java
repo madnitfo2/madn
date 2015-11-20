@@ -36,7 +36,7 @@ public class TcpClient
         this.socket = socket;
         inFromServer = new BufferedReader(new InputStreamReader(socket.getInputStream()));             
         outToServer = new DataOutputStream(socket.getOutputStream());  
-        outToServer.writeChars("1|0.01b;");
+        outToServer.writeChars("1|0.01b%%;");
         receiver();
         
             //System.out.println("Sending to Client");  
@@ -62,6 +62,7 @@ public class TcpClient
                 while(!CommandFinished)
                 {
                       zeichen = inFromServer.read();
+                      if(zeichen == 0) zeichen = inFromServer.read();
                       if((char)zeichen == ';')
                       {
                           CommandFinished = true;
