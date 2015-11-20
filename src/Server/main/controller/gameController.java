@@ -14,15 +14,15 @@ public class gameController {
     int dice;
     int[][] allPlayersPosition;
     
-    public int[][] getAllPlayerPositions() {
-        for(int i = 0; i <4; i++) {
-            this.allPlayersPosition[i] = 
-        }
-    }
+//    public int[][] getAllPlayerPositions() {
+//        for(int i = 0; i <4; i++) {
+//            this.allPlayersPosition[i] = 
+//        }
+//    }
     
-    public player getPlayerById(int playerID) {
-        
-    }
+//    public player getPlayerById(int playerID) {
+//        
+//    }
     
     public void checkAugenzahl (int augenzahl, player currPlayer) {
         if (augenzahl == 6){

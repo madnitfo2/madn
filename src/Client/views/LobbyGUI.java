@@ -44,31 +44,13 @@ import javax.swing.Icon;
 
 public class LobbyGUI {
 
-	private JFrame frmLobby;
+	public JFrame frmLobby;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					
-					LobbyGUI MLobbyApp= new LobbyGUI();
-					MLobbyApp.frmLobby.setVisible(true);
-					
-					LoginGUI LoginFrame = new LoginGUI();
-					LoginFrame.setVisible(true);
-					
-					SpielfeldGUI frame = new SpielfeldGUI();
-					frame.setVisible(true);
-					
-									
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	
 	}
 
 	/**
