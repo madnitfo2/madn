@@ -45,7 +45,15 @@ import javax.swing.Icon;
 public class LobbyGUI {
 
 	public JFrame frmLobby;
+        public String currPlayerName;
 
+    public String getCurrPlayerName() {
+        return currPlayerName;
+    }
+
+    public void setCurrPlayerName(String currPlayerName) {
+        this.currPlayerName = currPlayerName;
+    }
 	/**
 	 * Launch the application.
 	 */

@@ -76,14 +76,14 @@ public class MADN {
 			public void run() {
 				try {
 					
-					LobbyGUI MLobbyApp= new LobbyGUI();
-					MLobbyApp.frmLobby.setVisible(true);
+					//LobbyGUI MLobbyApp= new LobbyGUI();
+					//MLobbyApp.frmLobby.setVisible(true);
 					
 					LoginGUI LoginFrame = new LoginGUI();
 					LoginFrame.setVisible(true);
 					
-					SpielfeldGUI frame = new SpielfeldGUI();
-					frame.setVisible(true);
+					//SpielfeldGUI frame = new SpielfeldGUI();
+					//frame.setVisible(true);
 					
 									
 				} catch (Exception e) {
@@ -92,8 +92,8 @@ public class MADN {
 			}
 		});
 
-       //TcpServer.main(args);
-       TcpClient.main(args);
+       TcpServer.main(args);
+       //TcpClient.main(args);
       //Packet p = new Packet("2","",null);
       //p.writestring("Parameter 1 ?!?!");
       //p.writestring("Parameter 2 ?!?!");

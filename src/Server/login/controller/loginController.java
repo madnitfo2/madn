@@ -4,10 +4,16 @@
  */
 package Server.login.controller;
 
+import Client.views.LobbyGUI;
+
 /**
  *
  * @author Lokaler Benutzer
  */
 public class loginController {
     //neuen Player erstellen, player zur Lobby weiterleiten
+    public void createNewPlayer(String name) {
+        LobbyGUI MLobbyApp= new LobbyGUI();
+        MLobbyApp.frmLobby.setVisible(true);
+    }
 }
