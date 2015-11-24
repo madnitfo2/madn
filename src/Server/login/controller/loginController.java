@@ -13,7 +13,7 @@ import Client.views.LobbyGUI;
 public class loginController {
     //neuen Player erstellen, player zur Lobby weiterleiten
     public void createNewPlayer(String name) {
-        LobbyGUI MLobbyApp= new LobbyGUI();
-        MLobbyApp.frmLobby.setVisible(true);
+        LobbyGUI MLobbyApp= new LobbyGUI(true,name);
+        MLobbyApp.frmLobby.setVisible(true);  
     }
 }

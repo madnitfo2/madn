@@ -9,9 +9,13 @@ import Client.views.LobbyGUI;
  * @author Lokaler Benutzer
  */
 public class lobbyController {
+    String currName;
+    LobbyGUI lobby = new LobbyGUI(false,currName);
     
-    LobbyGUI lobby = new LobbyGUI();
     
+    public void getPlayerName() {
+        currName = lobby.currPlayerName;
+    }
     
     
 }

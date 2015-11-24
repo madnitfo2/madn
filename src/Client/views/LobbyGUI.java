@@ -42,11 +42,17 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Checkbox;
 import javax.swing.Icon;
 
-public class LobbyGUI {
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener; 
 
-	public JFrame frmLobby;
-        public String currPlayerName;
+public class LobbyGUI implements ActionListener{
 
+    public JFrame frmLobby;
+    public String currPlayerName;
+    JButton btnCreateLobby = new JButton("Create Lobby");
+    JPanel panelLobby = new JPanel();
+    JLabel lblP1 = new JLabel("Player1");
+    
     public String getCurrPlayerName() {
         return currPlayerName;
     }
@@ -54,6 +60,7 @@ public class LobbyGUI {
     public void setCurrPlayerName(String currPlayerName) {
         this.currPlayerName = currPlayerName;
     }
+
 	/**
 	 * Launch the application.
 	 */
@@ -64,8 +71,11 @@ public class LobbyGUI {
 	/**
 	 * Create the application.
 	 */
-	public LobbyGUI() {
-		initialize();
+	public LobbyGUI(boolean start,String name) {
+            if (start) {
+                this.currPlayerName = name;
+                initialize();
+            }		
 	}
 
 	/**
@@ -90,9 +100,9 @@ public class LobbyGUI {
 		frmLobby.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblPlayerName = new JLabel("LUKAS");
+		JLabel lblPlayerName = new JLabel(currPlayerName);
 		lblPlayerName.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPlayerName.setFont(new Font("Microsoft YaHei", Font.BOLD, 11));
+		lblPlayerName.setFont(new Font("Microsoft YaHei", Font.BOLD, 14));
 		lblPlayerName.setBounds(8, 17, 177, 14);
 		panel.add(lblPlayerName);
 		
@@ -128,7 +138,7 @@ public class LobbyGUI {
 		frmLobby.getContentPane().add(tabbedPaneChat);
 		
 		JPanel panelGrpChat = new JPanel();
-		tabbedPaneChat.addTab("New tab", null, panelGrpChat, null);
+		tabbedPaneChat.addTab("Globalchat", null, panelGrpChat, null);
 		panelGrpChat.setLayout(null);
 				
 		JScrollPane ScrollPaneGrpChat = new JScrollPane();
@@ -180,12 +190,12 @@ public class LobbyGUI {
 		
 		// Components - Lobby
 		
-		JPanel panelLobby = new JPanel();
+		
 		panelLobby.setBounds(217, 11, 573, 313);
 		frmLobby.getContentPane().add(panelLobby);
 		panelLobby.setLayout(null);
 		
-		panelLobby.setVisible(true);
+		panelLobby.setVisible(false);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
@@ -198,7 +208,7 @@ public class LobbyGUI {
 		lblNewLabel_1.setBounds(216, 13, 107, 21);
 		panel_2.add(lblNewLabel_1);
 		
-		JLabel lblP1 = new JLabel("Player1");
+		
 		lblP1.setForeground(new Color(51, 102, 255));
 		lblP1.setFont(new Font("Microsoft YaHei", Font.BOLD, 11));
 		lblP1.setBounds(104, 98, 293, 14);
@@ -334,8 +344,20 @@ public class LobbyGUI {
 		btnStartGame.setBounds(440, 259, 123, 43);
 		panelLobby.add(btnStartGame);
 		
-		JButton btnCreateLobby = new JButton("Create Lobby");
+		
 		btnCreateLobby.setBounds(442, 167, 120, 41);
 		frmLobby.getContentPane().add(btnCreateLobby);
+                ButtonEvents();
 	}
+        
+    public void ButtonEvents() {
+        btnCreateLobby.addActionListener(this);
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+        panelLobby.setVisible(true);
+        btnCreateLobby.setVisible(false);
+        lblP1.setText(currPlayerName);
+    } 
+        
 }

@@ -51,7 +51,7 @@ public class LoginGUI extends JFrame implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent e) {
-        controller.createNewPlayer(btnNewButton.getText());
+        controller.createNewPlayer(txtEnterYourName.getText());
         this.dispose();
     } 
         
