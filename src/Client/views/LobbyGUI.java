@@ -41,18 +41,21 @@ import javax.swing.border.EtchedBorder;
 
 import java.awt.Checkbox;
 import javax.swing.Icon;
+import Client.views.SpielfeldGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
 
 public class LobbyGUI implements ActionListener{
 
+    SpielfeldGUI gamefield;
     public JFrame frmLobby;
     public String currPlayerName;
     JButton btnCreateLobby = new JButton("Create Lobby");
     JPanel panelLobby = new JPanel();
     JLabel lblP1 = new JLabel("Player1");
-    
+    JButton btnStartGame = new JButton("START GAME");
+
     public String getCurrPlayerName() {
         return currPlayerName;
     }
@@ -339,11 +342,10 @@ public class LobbyGUI implements ActionListener{
 		lblSpielerSindBereit.setBounds(274, 21, 131, 14);
 		panel_3.add(lblSpielerSindBereit);
 		
-		JButton btnStartGame = new JButton("START GAME");
-		btnStartGame.setEnabled(false);
+		btnStartGame.setEnabled(true);
 		btnStartGame.setBounds(440, 259, 123, 43);
 		panelLobby.add(btnStartGame);
-		
+		ButtonEventsStart();
 		
 		btnCreateLobby.setBounds(442, 167, 120, 41);
 		frmLobby.getContentPane().add(btnCreateLobby);
@@ -354,10 +356,22 @@ public class LobbyGUI implements ActionListener{
         btnCreateLobby.addActionListener(this);
     }
     
+    public void ButtonEventsStart() {
+        btnStartGame.addActionListener(this);
+    }
+    
+    
     public void actionPerformed(ActionEvent e) {
-        panelLobby.setVisible(true);
-        btnCreateLobby.setVisible(false);
-        lblP1.setText(currPlayerName);
+        if (e.getSource() == btnCreateLobby) {
+            panelLobby.setVisible(true);
+            btnCreateLobby.setVisible(false);
+            lblP1.setText(currPlayerName);
+        } else if (e.getSource()== btnStartGame) {
+            frmLobby.dispose();
+            //Spielfeld anzeigen
+            gamefield = new SpielfeldGUI();
+            gamefield.setVisible(true);
+        }
     } 
         
 }
