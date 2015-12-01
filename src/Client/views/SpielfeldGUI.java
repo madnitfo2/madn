@@ -28,6 +28,7 @@ public class SpielfeldGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public SpielfeldGUI() {
+                int playerId = 3;
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,36 +53,202 @@ public class SpielfeldGUI extends JFrame {
 		ImageIcon icobfigurl41 = new ImageIcon("images/figuren/blau/Figur_Blau_l41.png");
 		ImageIcon icobfigur = new ImageIcon("images/figuren/blau/Figur_Blau_n.png");
 			
-		JLabel lbl_fb1 = new JLabel(icobfigurl51);
-		lbl_fb1.setText("");
-		lbl_fb1.setBounds(100, 444, 65, 64);
-		panel.add(lbl_fb1);
 		
-		JLabel lbl_fb2 = new JLabel(icobfigurl41);
-		lbl_fb2.setText("");
-		lbl_fb2.setBounds(166, 444, 65, 64);
-		panel.add(lbl_fb2);
-		
-		JLabel lbl_fb3 = new JLabel(icobfigurl51);
-		lbl_fb3.setText("");
-		lbl_fb3.setBounds(107, 396, 65, 64);
-		panel.add(lbl_fb3);
-		
-		JLabel lbl_fb4 = new JLabel(icobfigurl41);
-		lbl_fb4.setText("");
-		lbl_fb4.setBounds(172, 397, 65, 64);
-		panel.add(lbl_fb4);
 		
 		JTextPane textPaneLog = new JTextPane();
 		textPaneLog.setBounds(10, 607, 900, 132);
 		panel.add(textPaneLog);
-		
-		JLabel lblSpielfeld = new JLabel(icobfeld);
-		lblSpielfeld.setBounds(10, 11, 900, 585);
-		panel.add(lblSpielfeld);
-		
+                
+                JLabel lblSpielfeld;
+                
+                //Figuren, ohne Positionen
+                    //Farbe blau
+                JLabel lbl_fb1 = new JLabel(icobfigurl51);
+                lbl_fb1.setText("");
+                JLabel lbl_fb2 = new JLabel(icobfigurl41);
+                lbl_fb2.setText("");
+                JLabel lbl_fb3 = new JLabel(icobfigurl51);
+                lbl_fb3.setText("");
+                JLabel lbl_fb4 = new JLabel(icobfigurl41);
+                lbl_fb4.setText("");
+                    //Farbe rot
+                JLabel lbl_fr1 = new JLabel(icobfigurl51);
+                lbl_fr1.setText("");
+                JLabel lbl_fr2 = new JLabel(icobfigurl41);
+                lbl_fr2.setText("");
+                JLabel lbl_fr3 = new JLabel(icobfigurl51);
+                lbl_fr3.setText("");
+                JLabel lbl_fr4 = new JLabel(icobfigurl41);
+                lbl_fr4.setText("");
+                    //Farbe grün
+                JLabel lbl_fgr1 = new JLabel(icobfigurl51);
+                lbl_fgr1.setText("");
+                JLabel lbl_fgr2 = new JLabel(icobfigurl41);
+                lbl_fgr2.setText("");
+                JLabel lbl_fgr3 = new JLabel(icobfigurl51);
+                lbl_fgr3.setText("");
+                JLabel lbl_fgr4 = new JLabel(icobfigurl41);
+                lbl_fgr4.setText("");
+                    //Farbe gelb
+                JLabel lbl_fge1 = new JLabel(icobfigurl51);
+                lbl_fge1.setText("");
+                JLabel lbl_fge2 = new JLabel(icobfigurl41);
+                                lbl_fge2.setText("");
+                                JLabel lbl_fge3 = new JLabel(icobfigurl51);
+                                lbl_fge3.setText("");
+                                JLabel lbl_fge4 = new JLabel(icobfigurl41);
+                                lbl_fge4.setText("");
+                
+                
+                
+		switch (playerId) {
+                    //Figuren-Image Sources noch ändern für alle Farben ausser blau
+                    case 0:     
+                                //Figuren-Positionen
+                                    //Blau
+                                lbl_fb1.setBounds(100, 444, 65, 64);
+                                lbl_fb2.setBounds(166, 444, 65, 64);
+                                lbl_fb3.setBounds(107, 396, 65, 64);
+                                lbl_fb4.setBounds(172, 397, 65, 64);
+                                    //rot
+                                lbl_fr1.setBounds(160, 80, 65, 64);
+                                lbl_fr2.setBounds(216, 80, 65, 64);
+                                lbl_fr3.setBounds(165, 49, 65, 64);
+                                lbl_fr4.setBounds(219, 49, 65, 64);
+                                    //grün
+                                lbl_fgr1.setBounds(644, 78, 65, 64);
+                                lbl_fgr2.setBounds(698, 78, 65, 64);
+                                lbl_fgr3.setBounds(639, 49, 65, 64);
+                                lbl_fgr4.setBounds(690, 49, 65, 64);
+                                    //gelb
+                                lbl_fge1.setBounds(691, 444, 65, 64);
+                                lbl_fge2.setBounds(757, 444, 65, 64);
+                                lbl_fge3.setBounds(685, 396, 65, 64);
+                                lbl_fge4.setBounds(750, 397, 65, 64);
+                             break;
+                    case 1:     
+                                //Figuren-Positionen
+                                    //rot
+                                lbl_fr1.setBounds(100, 444, 65, 64);
+                                lbl_fr2.setBounds(166, 444, 65, 64);
+                                lbl_fr3.setBounds(107, 396, 65, 64);
+                                lbl_fr4.setBounds(172, 397, 65, 64);
+                                    //grün
+                                lbl_fgr1.setBounds(160, 80, 65, 64);
+                                lbl_fgr2.setBounds(216, 80, 65, 64);
+                                lbl_fgr3.setBounds(165, 49, 65, 64);
+                                lbl_fgr4.setBounds(219, 49, 65, 64);
+                                    //gelb
+                                lbl_fge1.setBounds(644, 78, 65, 64);
+                                lbl_fge2.setBounds(698, 78, 65, 64);
+                                lbl_fge3.setBounds(639, 49, 65, 64);
+                                lbl_fge4.setBounds(690, 49, 65, 64);
+                                    //blau
+                                lbl_fb1.setBounds(691, 444, 65, 64);
+                                lbl_fb2.setBounds(757, 444, 65, 64);
+                                lbl_fb3.setBounds(685, 396, 65, 64);
+                                lbl_fb4.setBounds(750, 397, 65, 64);
+                             break;
+                    case 2:     
+                                 //Figuren-Positionen
+                                    //grün
+                                lbl_fgr1.setBounds(100, 444, 65, 64);
+                                lbl_fgr2.setBounds(166, 444, 65, 64);
+                                lbl_fgr3.setBounds(107, 396, 65, 64);
+                                lbl_fgr4.setBounds(172, 397, 65, 64);
+                                    //gelb
+                                lbl_fge1.setBounds(160, 80, 65, 64);
+                                lbl_fge2.setBounds(216, 80, 65, 64);
+                                lbl_fge3.setBounds(165, 49, 65, 64);
+                                lbl_fge4.setBounds(219, 49, 65, 64);
+                                    //blau
+                                lbl_fb1.setBounds(644, 78, 65, 64);
+                                lbl_fb2.setBounds(698, 78, 65, 64);
+                                lbl_fb3.setBounds(639, 49, 65, 64);
+                                lbl_fb4.setBounds(690, 49, 65, 64);
+                                    //rot
+                                lbl_fr1.setBounds(691, 444, 65, 64);
+                                lbl_fr2.setBounds(757, 444, 65, 64);
+                                lbl_fr3.setBounds(685, 396, 65, 64);
+                                lbl_fr4.setBounds(750, 397, 65, 64);
+                             break;
+                    case 3:     
+                                 //Figuren-positionen
+                                 //gelb
+                                lbl_fge1.setBounds(100, 444, 65, 64);
+                                lbl_fge2.setBounds(166, 444, 65, 64);
+                                lbl_fge3.setBounds(107, 396, 65, 64);
+                                lbl_fge4.setBounds(172, 397, 65, 64);
+                                //blau
+                                lbl_fb1.setBounds(160, 80, 65, 64);
+                                lbl_fb2.setBounds(216, 80, 65, 64);
+                                lbl_fb3.setBounds(165, 49, 65, 64);
+                                lbl_fb4.setBounds(219, 49, 65, 64);
+                                //rot
+                                lbl_fr1.setBounds(644, 78, 65, 64);
+                                lbl_fr2.setBounds(698, 78, 65, 64);
+                                lbl_fr3.setBounds(639, 49, 65, 64);
+                                lbl_fr4.setBounds(690, 49, 65, 64);
+                                //grün
+                                lbl_fgr1.setBounds(691, 444, 65, 64);
+                                lbl_fgr2.setBounds(757, 444, 65, 64);
+                                lbl_fgr3.setBounds(685, 396, 65, 64);
+                                lbl_fgr4.setBounds(750, 397, 65, 64);
+                             break;
+                }
+                
+                //Figuren zum Panel hinzufügen
+                //blau
+                panel.add(lbl_fb1);
+                panel.add(lbl_fb2);
+                panel.add(lbl_fb3);
+                panel.add(lbl_fb4);
+                //rot
+                panel.add(lbl_fr1);
+                panel.add(lbl_fr2);
+                panel.add(lbl_fr3);
+                panel.add(lbl_fr4);
+                //grün
+                panel.add(lbl_fgr1);
+                panel.add(lbl_fgr2);
+                panel.add(lbl_fgr3);
+                panel.add(lbl_fgr4);
+                //gelb
+                panel.add(lbl_fge1);
+                panel.add(lbl_fge2);
+                panel.add(lbl_fge3);
+                panel.add(lbl_fge4);
+                
+                
+                switch (playerId) {
+                    //Figuren-Image Sources noch ändern für alle Farben ausser blau
+                    case 0:    
+                                //Spielfeld
+                                lblSpielfeld = new JLabel(icobfeld);
+                                lblSpielfeld.setBounds(10, 11, 900, 585);
+                                panel.add(lblSpielfeld);
+                             break;
+                    case 1:     
+                                //Spielfeld
+                                lblSpielfeld = new JLabel(icorfeld);
+                                lblSpielfeld.setBounds(10, 11, 900, 585);
+                                panel.add(lblSpielfeld);
+                             break;
+                    case 2:     
+                                //Spielfeld
+                                lblSpielfeld = new JLabel(icogrfeld);
+                                lblSpielfeld.setBounds(10, 11, 900, 585);
+                                panel.add(lblSpielfeld);
+                             break;
+                    case 3:     
+                                //Spielfeld
+                                lblSpielfeld = new JLabel(icogefeld);
+                                lblSpielfeld.setBounds(10, 11, 900, 585);
+                                panel.add(lblSpielfeld);
+                             break;
+                }
 
-				
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(46, 139, 87));
 		panel_1.setBounds(920, 0, 346, 750);
