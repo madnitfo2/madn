@@ -2,6 +2,8 @@ package Client.views;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import Server.main.model.game;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,11 +21,19 @@ import java.awt.Font;
 import javax.swing.border.EtchedBorder;
 import javax.swing.Icon;
 
-public class SpielfeldGUI extends JFrame {
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+public class SpielfeldGUI extends JFrame implements MouseListener {
 
 	private JPanel contentPane;
 	private JTextField textFieldIngameGrpChat;
-
+        ImageIcon lbldice;
+        game currGame = new game();
+        int diceResult = 0;
+        String result = "";
+        JPanel panel_2;
 	/**
 	 * Create the frame.
 	 */
@@ -88,7 +98,7 @@ public class SpielfeldGUI extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JPanel panel_2 = new JPanel();
+		panel_2 = new JPanel();
 		panel_2.setBounds(0, 11, 336, 728);
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
@@ -178,9 +188,52 @@ public class SpielfeldGUI extends JFrame {
 		btnNewButton.setBounds(245, 685, 81, 32);
 		panel_2.add(btnNewButton);
 				
-		ImageIcon lbldice = new ImageIcon("images/Dice.jpg");
+		lbldice = new ImageIcon("images/Dice.jpg");
 		JLabel lblDice = new JLabel(lbldice);
 		lblDice.setBounds(10, 304, 80, 80);
 		panel_2.add(lblDice);
+                
+                
+                
+                lblDice.addMouseListener(new MouseAdapter() {
+                    public void mouseClicked(MouseEvent e) {
+                        // you can open a new frame here as
+                        // i have assumed you have declared "frame" as instance variable
+                        System.out.println("Würfeln");
+                        
+                        diceResult = currGame.dice();
+                        result = String.valueOf(diceResult);
+
+                        JLabel lblResult = new JLabel(result);
+                        lblResult.setBounds(20, 324, 80, 80);
+                        panel_2.add(lblResult);
+                    }
+                });
+                
 	}
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

@@ -6,6 +6,7 @@ package Server.main.model;
 import Server.player.model.player;
 import madn.model.Figur;
 import Server.main.model.*;
+import java.util.Random;
 //https://github.com/sdoerner/MenschAergerDichNicht
 /**
  *
@@ -43,8 +44,14 @@ public class game {
     
     public int dice(){
         //würfeln ausführen
-        int dice = (int)Math.random()*6;    
-        return dice;
+        //int dice = (int)Math.random()*6;    
+         Random wuerfel = new Random();
+        int augenZahl = 0;
+
+        augenZahl = wuerfel.nextInt(6);
+        System.out.println(augenZahl);
+
+        return augenZahl;
     }
     
     public void nextPlayer(player aktuellerSpieler){
