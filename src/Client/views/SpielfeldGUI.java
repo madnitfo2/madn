@@ -48,10 +48,22 @@ public class SpielfeldGUI extends JFrame {
 		ImageIcon icorfeld = new ImageIcon("images/Spielfeld/_rot_feld.png");
 		ImageIcon icogrfeld = new ImageIcon("images/Spielfeld/_gruen_feld.png");
 		ImageIcon icogefeld = new ImageIcon("images/Spielfeld/_gelb_feld.png");
-		
+		//Figuren blau
 		ImageIcon icobfigurl51 = new ImageIcon("images/figuren/blau/Figur_Blau_l51.png");
 		ImageIcon icobfigurl41 = new ImageIcon("images/figuren/blau/Figur_Blau_l41.png");
 		ImageIcon icobfigur = new ImageIcon("images/figuren/blau/Figur_Blau_n.png");
+                //Figuren rot
+                ImageIcon icorfigurl51 = new ImageIcon("images/figuren/rot/Figur_Rot_l51.png");
+		ImageIcon icorfigurl41 = new ImageIcon("images/figuren/rot/Figur_Rot_l41.png");
+		ImageIcon icorfigur = new ImageIcon("images/figuren/rot/Figur_Rot_n.png");
+                //Figuren Gruen
+                ImageIcon icogrfigurl51 = new ImageIcon("images/figuren/gruen/Figur_Gruen_l51.png");
+		ImageIcon icogrfigurl41 = new ImageIcon("images/figuren/gruen/Figur_Gruen_l41.png");
+		ImageIcon icogrfigur = new ImageIcon("images/figuren/gruen/Figur_Gruen_n.png");
+                //Figuren Gelb
+                ImageIcon icogefigurl51 = new ImageIcon("images/figuren/gelb/Figur_Gelb_l51.png");
+		ImageIcon icogefigurl41 = new ImageIcon("images/figuren/gelb/Figur_Gelb_l41.png");
+		ImageIcon icogefigur = new ImageIcon("images/figuren/gelb/Figur_Gelb_n.png");
 			
 		
 		
@@ -72,32 +84,32 @@ public class SpielfeldGUI extends JFrame {
                 JLabel lbl_fb4 = new JLabel(icobfigurl41);
                 lbl_fb4.setText("");
                     //Farbe rot
-                JLabel lbl_fr1 = new JLabel(icobfigurl51);
+                JLabel lbl_fr1 = new JLabel(icorfigurl51);
                 lbl_fr1.setText("");
-                JLabel lbl_fr2 = new JLabel(icobfigurl41);
+                JLabel lbl_fr2 = new JLabel(icorfigurl41);
                 lbl_fr2.setText("");
-                JLabel lbl_fr3 = new JLabel(icobfigurl51);
+                JLabel lbl_fr3 = new JLabel(icorfigurl51);
                 lbl_fr3.setText("");
-                JLabel lbl_fr4 = new JLabel(icobfigurl41);
+                JLabel lbl_fr4 = new JLabel(icorfigurl41);
                 lbl_fr4.setText("");
                     //Farbe grün
-                JLabel lbl_fgr1 = new JLabel(icobfigurl51);
+                JLabel lbl_fgr1 = new JLabel(icogrfigurl51);
                 lbl_fgr1.setText("");
-                JLabel lbl_fgr2 = new JLabel(icobfigurl41);
+                JLabel lbl_fgr2 = new JLabel(icogrfigurl41);
                 lbl_fgr2.setText("");
-                JLabel lbl_fgr3 = new JLabel(icobfigurl51);
+                JLabel lbl_fgr3 = new JLabel(icogrfigurl51);
                 lbl_fgr3.setText("");
-                JLabel lbl_fgr4 = new JLabel(icobfigurl41);
+                JLabel lbl_fgr4 = new JLabel(icogrfigurl41);
                 lbl_fgr4.setText("");
                     //Farbe gelb
-                JLabel lbl_fge1 = new JLabel(icobfigurl51);
+                JLabel lbl_fge1 = new JLabel(icogefigurl51);
                 lbl_fge1.setText("");
-                JLabel lbl_fge2 = new JLabel(icobfigurl41);
-                                lbl_fge2.setText("");
-                                JLabel lbl_fge3 = new JLabel(icobfigurl51);
-                                lbl_fge3.setText("");
-                                JLabel lbl_fge4 = new JLabel(icobfigurl41);
-                                lbl_fge4.setText("");
+                JLabel lbl_fge2 = new JLabel(icogefigurl41);
+                lbl_fge2.setText("");
+                JLabel lbl_fge3 = new JLabel(icogefigurl51);
+                lbl_fge3.setText("");
+                JLabel lbl_fge4 = new JLabel(icogefigurl41);
+                lbl_fge4.setText("");
                 
                 
                 
