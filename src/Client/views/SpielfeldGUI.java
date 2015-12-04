@@ -28,7 +28,7 @@ public class SpielfeldGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public SpielfeldGUI() {
-                int playerId = 3;
+                int playerId = 0;
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
