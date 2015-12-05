@@ -92,7 +92,7 @@ public class MADN {
 			}
 		});
 
-       TcpServer.main(args);
+       //TcpServer.main(args);
        //TcpClient.main(args);
       //Packet p = new Packet("2","",null);
       //p.writestring("Parameter 1 ?!?!");

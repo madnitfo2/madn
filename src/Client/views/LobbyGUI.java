@@ -42,6 +42,7 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Checkbox;
 import javax.swing.Icon;
 import Client.views.SpielfeldGUI;
+import Server.login.controller.loginController;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
@@ -80,8 +81,9 @@ public class LobbyGUI implements ActionListener{
                 initialize();
             }		
 	}
-
-	/**
+        public List listPlayer = new List();
+	public JPanel panel = new JPanel();
+        /**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
@@ -98,7 +100,7 @@ public class LobbyGUI implements ActionListener{
 		// Components - PLayer List 
 		
 		
-		JPanel panel = new JPanel();
+		
 		panel.setBounds(10, 11, 197, 577);
 		frmLobby.getContentPane().add(panel);
 		panel.setLayout(null);
@@ -109,7 +111,7 @@ public class LobbyGUI implements ActionListener{
 		lblPlayerName.setBounds(8, 17, 177, 14);
 		panel.add(lblPlayerName);
 		
-		List listPlayer = new List();
+		
 		listPlayer.setBounds(0, 49, 197, 424);
 		panel.add(listPlayer);
 		listPlayer.setForeground(Color.BLACK);
@@ -363,9 +365,7 @@ public class LobbyGUI implements ActionListener{
     
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnCreateLobby) {
-            panelLobby.setVisible(true);
-            btnCreateLobby.setVisible(false);
-            lblP1.setText(currPlayerName);
+             loginController.ConnectToServer(currPlayerName);
         } else if (e.getSource()== btnStartGame) {
             frmLobby.dispose();
             //Spielfeld anzeigen

@@ -8,12 +8,22 @@ import Client.views.LobbyGUI;
  *
  * @author Lokaler Benutzer
  */
-public class lobbyController {
-    String currName;
-    LobbyGUI lobby = new LobbyGUI(false,currName);
+public  class lobbyController {
+    static String currName;
+    static LobbyGUI lobby = null;
     
+    static public void CreateLobby(String Playername)
+    {
+        lobby= new LobbyGUI(true,Playername);
+        lobby.setCurrPlayerName(Playername);
+        lobby.frmLobby.setVisible(true);
+    }
     
-    public void getPlayerName() {
+    static public void AddPlayer(String Playername)
+    {
+        lobby.listPlayer.add(Playername);
+    }
+    static public void getPlayerName() {
         currName = lobby.currPlayerName;
     }
     

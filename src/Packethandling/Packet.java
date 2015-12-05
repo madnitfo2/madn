@@ -1,5 +1,8 @@
 package Packethandling;
 
+import Client.views.LobbyGUI;
+import Server.login.controller.loginController;
+import Server.main.controller.lobbyController;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -69,21 +72,41 @@ public class Packet {
     }
     public void handle()
     {
-        Packet p2 = new Packet(Opcode+"",Content,sender);
+        Packet Packet = new Packet(Opcode+"",Content,sender);
         try {
             System.out.println("Packet: " + Opcode + " ::: " + Content);
             switch(Opcode){
-                case 1:
-                    String ClientVersion = p2.readstring();
+                case 1001: //Client sendet Version
+                    String ClientVersion = Packet.readstring();
                     System.out.println("Client mit der Version : '" + ClientVersion + "' Sagt hallo.");
-                    Packet p = new Packet("2","0.01b%%",sender);
+                    Packet p = new Packet("1101","True%%",sender);
                     p.sendPacket();
                     //sender.writeChars("2|0.01b;");
                     break;
-                case 2:
-                    String ServerVersion = p2.readstring();
-                    System.out.println("Server mit der Version : '" + ServerVersion + "' Sagt hallo.");
+                case 1101: //Server sendet Versionscheck
+                    String ServerVersion = Packet.readstring();
+                    System.out.println("Darf der Client sich einloggen? : '" + ServerVersion);
+                   
                     break;
+                case 1002: //Client sendet Playername
+                    String PlayerName = Packet.readstring();
+                    System.out.println("Spieler:"+PlayerName+" will sich einloggen.");
+                    //Sende erlaubnis
+                    Packet p1 = new Packet(1102+"","True%%"+PlayerName+"%%",Packet.sender);
+                    p1.sendPacket();
+                    lobbyController.AddPlayer(PlayerName);
+                    break;
+                case 1102: //Server sendet Okay
+                    String allowedToJoin = Packet.readstring();
+                    String name  = Packet.readstring();
+                    if("True".equals(allowedToJoin))
+                    {
+                        //LobbyGUI MLobbyApp= new LobbyGUI(true,name);
+                        //MLobbyApp.setCurrPlayerName(name);
+                        //MLobbyApp.frmLobby.setVisible(true);
+                        lobbyController.CreateLobby(name);
+                    }
+                break;
                 default:
                     System.out.println("Feher " + Opcode);
             }

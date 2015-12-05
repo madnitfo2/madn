@@ -9,27 +9,38 @@ package Server;
  *
  * @author mfrye
  */
-import java.io.*; 
+
 import java.net.*; 
-public class TcpServer 
-{    
-    /**
-     *
-     * @param argv
-     * @throws Exception
-     */
-    public static void main(String argv[]) throws Exception       
+
+public class TcpServer implements Runnable {
+
+    public  TcpServer()
+    {
+        Thread t;
+        t = new Thread (this, "ServerThread");
+        t.start ();
+    }
+    @Override
+     public void run()
+     {
+            main();
+     }
+    public static void main()     
     {          
-        
+         try {
         ServerSocket welcomeSocket = new ServerSocket(80); 
         System.out.println("Starte Listener");  
         while(true)          
         {             
             System.out.println("Warten auf Client");  
+           
             Socket connectionSocket = welcomeSocket.accept();   
             TcpClient client = new TcpClient(connectionSocket);
             System.out.println("Client Connected");  
-            
-        }       
+           
+        }     
+         } catch (Exception ex) {
+           
+        }
     } 
 }
